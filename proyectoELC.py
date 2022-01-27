@@ -57,3 +57,19 @@ ratings = pd.read_table('d:/usuarios/Users/EstherLanchaCañas/OneDrive - IES Lui
 
 mergeUsersRatings=pd.merge(users, ratings)
 userRatingsMoviesDF=pd.merge(movies, mergeUsersRatings)
+
+
+#============================================= PROGRAMA =============================================#
+
+
+#MENÚ DE OPCIONES:
+
+
+print("\n\n================================")
+print("============= MENU =============")
+print("================================\n\n")
+print("Opción 1: Rating Medio STAR WARS por género")
+print("Opción 2: Películas Mejor Valoradas")
+print("Opción 3: Media de los usuarios del Género Terror")
+print("Opción 4: Actualización de datos")
+opc = int(input("Escoge una opción: "))
