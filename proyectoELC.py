@@ -49,3 +49,11 @@ ratings = pd.read_table('d:/usuarios/Users/EstherLanchaCañas/OneDrive - IES Lui
                       sep='::',
                       header=None, 
                       names=ratingHeader)
+
+#============================================= EXPORTACIÓN Y UNIÓN DE LOS DATOS =============================================#
+
+
+#Mergeo de las tablas. Primero creo un dataframe temporal en el que uno users y ratings y después uno ese dataframe con movies.
+
+mergeUsersRatings=pd.merge(users, ratings)
+userRatingsMoviesDF=pd.merge(movies, mergeUsersRatings)
