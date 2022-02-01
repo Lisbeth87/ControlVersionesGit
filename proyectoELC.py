@@ -73,3 +73,18 @@ print("Opción 2: Películas Mejor Valoradas")
 print("Opción 3: Media de los usuarios del Género Terror")
 print("Opción 4: Actualización de datos")
 opc = int(input("Escoge una opción: "))
+
+if opc == 1:
+    #Opción 1: Rating Medio STAR WARS por género
+
+    #Copio el dataframe general a la variable ratingStarWars para poder trabajar con él posteriormente.
+    ratingStarWars = userRatingsMoviesDF.copy()
+
+    #Aquí asigno a la variable starwars todas las películas que en el título contengan las palabras "Star Wars", generándose un nuevo dataframe.
+    starwars = ratingStarWars[ratingStarWars['title'].str.contains('Star Wars')]
+
+    #Después las agrupo por género y realizo la media del rating.
+    mediaGenero = starwars.groupby(['gender'])['rating'].mean()
+
+    #Exportamos el DataFrame a un CSV con separador de ,.
+    mediaGenero.to_csv("d:/usuarios/Users/EstherLanchaCañas/OneDrive - IES Luis Braille/Entornos de Desarrollo\Entregable 4 - Control de versiones con Git/Proyecto/miProyecto/datos/Ejercicio1_EstherLanchaCanas.csv", sep=",")
