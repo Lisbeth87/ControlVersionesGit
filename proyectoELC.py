@@ -120,3 +120,12 @@ elif opc == 3:
 
     #Pintamos el resultado.
     print(f"La edad media de los usuarios TERRORÍFICOS es {media} años")
+
+elif opc == 4:
+    #Opción 4: Actualización de datos
+
+    #Asigno a la columna ratings del dataframe general el mismo valor multipliclado por 2.
+    userRatingsMoviesDF['rating'] = 2*userRatingsMoviesDF['rating']
+    
+    #Exportamos el DataFrame a un CSV con separador de ,.
+    userRatingsMoviesDF.to_csv("d:/usuarios/Users/EstherLanchaCañas/OneDrive - IES Luis Braille/Entornos de Desarrollo\Entregable 4 - Control de versiones con Git/Proyecto/miProyecto/datos/Ejercicio4_EstherLanchaCanas.csv", sep=",")
