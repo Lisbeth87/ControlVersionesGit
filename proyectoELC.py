@@ -104,4 +104,4 @@ elif opc == 2:
     valoradasFinal = mejorValoradas[mejorValoradas[('rating','size')] > 1000].sort_values(('rating','mean'), ascending=False)
     
     #Exportamos el DataFrame a un CSV con separador de ,.
-    valoradasFinal.to_csv("C:/Users/esthe/OneDrive - IES Luis Braille/Programación/Simulacion Examen/Ejercicio2_EstherLanchaCanas.csv", sep=",")
+    valoradasFinal.to_csv("d:/usuarios/Users/EstherLanchaCañas/OneDrive - IES Luis Braille/Entornos de Desarrollo\Entregable 4 - Control de versiones con Git/Proyecto/miProyecto/datos/Ejercicio2_EstherLanchaCanas.csv", sep=",")
