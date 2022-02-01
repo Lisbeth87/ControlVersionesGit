@@ -105,3 +105,18 @@ elif opc == 2:
     
     #Exportamos el DataFrame a un CSV con separador de ,.
     valoradasFinal.to_csv("d:/usuarios/Users/EstherLanchaCañas/OneDrive - IES Luis Braille/Entornos de Desarrollo\Entregable 4 - Control de versiones con Git/Proyecto/miProyecto/datos/Ejercicio2_EstherLanchaCanas.csv", sep=",")
+
+elif opc == 3:
+    #Opción 3: Media de los usuarios del Género Terror
+
+    #Copio el dataframe general a la variable mediaTerror para poder trabajar con él posteriormente.
+    mediaTerror = userRatingsMoviesDF.copy()
+
+    #Asigno a la variable horror todas las películas que contengan la palabra "Horror"
+    horror = mediaTerror[mediaTerror['genders'].str.contains('Horror')]
+
+    #Aquí realizamos la media de la edad y lo redondeamos a 2 decimales.
+    media = horror['age'].mean().round(2)
+
+    #Pintamos el resultado.
+    print(f"La edad media de los usuarios TERRORÍFICOS es {media} años")
