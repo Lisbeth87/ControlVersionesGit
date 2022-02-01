@@ -88,3 +88,20 @@ if opc == 1:
 
     #Exportamos el DataFrame a un CSV con separador de ,.
     mediaGenero.to_csv("d:/usuarios/Users/EstherLanchaCañas/OneDrive - IES Luis Braille/Entornos de Desarrollo\Entregable 4 - Control de versiones con Git/Proyecto/miProyecto/datos/Ejercicio1_EstherLanchaCanas.csv", sep=",")
+
+elif opc == 2:
+    #Copio el dataframe general a la variable dg para poder trabajar con él posteriormente.
+    mejorValoradas = userRatingsMoviesDF.copy()
+
+    #Creo una pivot table con título y ratings, y hago un conteo del número de votos y de la media de esos votos. Almaceno la tabla en la variable df.
+    #Con aggfunc agregas las funciones sobre el valor rating (en este caso el numero de votos y la media)
+    mejorValoradas = mejorValoradas.pivot_table(index=['title'], values=['rating'], aggfunc={'rating': [np.size, np.mean]}, fill_value=0)
+
+    #Esta línea sirve para establecer dos únicas columnas llamadas 'rating_medium' (la media del rating) y 'num_votes' (número de votos).
+    #mejorValoradas.columns = ['rating_medium', 'num_votes']
+
+    #Aquí indicamos que solo muestre las películas con más de 1000 votos y que las ordene de mayor a menor según el rating.
+    valoradasFinal = mejorValoradas[mejorValoradas[('rating','size')] > 1000].sort_values(('rating','mean'), ascending=False)
+    
+    #Exportamos el DataFrame a un CSV con separador de ,.
+    valoradasFinal.to_csv("C:/Users/esthe/OneDrive - IES Luis Braille/Programación/Simulacion Examen/Ejercicio2_EstherLanchaCanas.csv", sep=",")
