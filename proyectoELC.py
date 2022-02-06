@@ -72,7 +72,7 @@ print("Opción 1: Rating Medio STAR WARS por género")
 print("Opción 2: Películas Mejor Valoradas")
 print("Opción 3: Media de los usuarios del Género Terror")
 print("Opción 4: Actualización de datos")
-print("Opción 5: SALIR")
+print("Opción 5: SALIR DEL PROGRAMA")
 opc = int(input("Escoge una opción: "))
 
 if opc == 1:
